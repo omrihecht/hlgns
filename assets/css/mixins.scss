@@ -1,0 +1,65 @@
+
+$colors-gold:#e8c486;
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin transition( $speed ){
+	-webkit-transition: all $speed ease-in-out;
+	-moz-transition:    all $speed ease-in-out;
+	-o-transition:      all $speed ease-in-out;
+	transition:         all $speed ease-in-out;
+}
+
+@mixin transition-transform( $speed ){
+	-webkit-transition: transform $speed ease-in-out;
+	-moz-transition:    transform $speed ease-in-out;
+	-o-transition:      transform $speed ease-in-out;
+	transition:         transform $speed ease-in-out;
+}
+
+@mixin remove-transition(){
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
+
+@mixin transition-delay( $time ){
+	-webkit-transition-delay:   $time;
+	-moz-transition-delay:      $time;
+	-o-transition-delay:        $time;
+	transition-delay:           $time;
+}
+
+@mixin transform( $string ){
+	-webkit-transform: $string;
+	-moz-transform:    $string;
+	-ms-transform:     $string;
+	-o-transform:      $string;
+	transform:         $string;
+}
+
+@mixin transform-origin( $x , $y ){
+	-webkit-transform-origin: $x $y;
+	-moz-transform-origin: $x $y;
+	-o-transform-origin: $x $y;
+	-ms-transform-origin: $x $y;
+	transform-origin: $x $y;
+}
+
+@mixin skew( $val ){
+  -moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew($val, 0deg);
+  -webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew($val, 0deg);
+  -o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew($val, 0deg);
+  -ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew($val, 0deg);
+  transform: scale(1) rotate(0deg) translate(0px, 0px) skew($val, 0deg);
+}
+
+@mixin aspect-ratio($width, $height){ position:relative;
+  &:before{ display:block; content:""; width:100%; padding-top:($height / $width) * 100%; }
+  > .content{ position: absolute; top:0; left:0; right:0; bottom:0; }
+}

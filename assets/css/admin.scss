@@ -1,0 +1,17 @@
+
+#contact-form-dashboard{
+	.contact-table{ direction:ltr;
+		.headline , .content-table-line{ display:table-row; width:100%;
+			div{ width:20%; box-sizing:border-box; padding:4px; display:table-cell; border-right:1px solid #ddd; border-bottom:1px solid #ddd; }
+			div:first-child{ border-left:1px solid #ddd; }
+			.msg{ width:40%; }
+		}
+		.headline{ background:#444444; font-weight:600; color:white; }
+		.content-table-line{
+			.name, .msg{ direction:rtl; text-align:left; }
+		}
+		.content-table-line:nth-child(even){  }
+		.content-table-line:nth-child(odd){  }
+		.totals{ clear:both; padding:10px 0; font-weight:600; }
+	}
+}

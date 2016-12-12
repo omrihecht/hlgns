@@ -1,0 +1,67 @@
+@import 'mixins';
+
+#wanted{ margin-top:60px; }
+.job-category{ margin-bottom:40px;
+  .image-holder{ background-color:black;
+    img{ display:block; height:350px; margin:0 auto; }
+  }
+  .job-content{ width:600px; margin:20px auto;
+    .job-description{ line-height:1.5;
+      h2{ font-size:1.8rem; margin-bottom:10px; line-height:1.2; }
+      p, ul{ margin-bottom:15px; }
+      li{ margin-bottom:5px; }
+      li:before{ width:6px; height:12px; display:inline-block; content:''; background-image:url(../images/jobs-li-diamond.png); background-size:100% 100%; margin-left:10px; margin-right:-16px; }
+      strong{ font-weight:600; }
+      a{ font-weight:600; }
+      a:hover{ text-decoration:underline; }
+    }
+
+    .send-cv-btn{ display:block; text-align:center; height:58px; line-height:58px; width:283px; color:white; margin:30px 0; font-size:1.2rem; background-color:black; background-image:url('../images/project-link-btn-bg.png');
+      span, img{ display:inline-block; position:relative; vertical-align:baseline; }
+      img{ right:20px; @include transition(0.1s); }
+    }
+    .send-cv-btn:hover, .send-cv-btn:active{ color:$colors-gold;
+      img{ margin-right:20px; }
+    }
+
+    .social{ margin-bottom:30px;
+      .social-btn{ direction:ltr; position:relative; display:inline-block; width:90px; height:30px; line-height:30px; color:white; margin:0 1px; font-size:0.8rem; border-radius:3px; box-sizing:border-box; overflow:hidden;
+        span{ position:relative; z-index:2; }
+        .fa{ margin-right:5px; font-size:1rem; }
+      }
+      .social-btn:before{ content:''; display:block; position:absolute; background-color:white; top:-150%; @include transform(rotate(-15deg)); left:-20%; width:140%; height:100%; z-index:1; @include transition(0.1s); }
+      .share-fb{ background-color:#3a5795; border:1px solid #3a5795; }
+      .share-twitter{ background-color:#55acee; border:1px solid #55acee; }
+      .share-ggl{ background-color:#dc0000; border:1px solid #dc0000; }
+
+      .social-btn:hover:before, .social-btn:active:before{ top:0; @include transform(rotate(0)); }
+      .share-fb:hover, .share-fb:active{ color:#3a5795; }
+      .share-twitter:hover, .share-twitter:active{ color:#55acee; }
+      .share-ggl:hover, .share-ggl:active{ color:#dc0000; }
+    }
+
+  }
+}
+
+
+@media screen and (max-width: 782px) {
+
+  #wanted{ margin-top:40px; }
+
+  .job-category{ margin-bottom:40px;
+    .image-holder{ background-color:black;
+      img{ display:block; height:auto; width:100%; max-width:400px; margin:0 auto; }
+    }
+    .job-content{ width:90%; max-width:450px; margin:20px auto;
+
+      .job-description{ line-height:1.5;
+        li:before{ width:5px; height:8px; margin-left:5px; margin-right:-10px; }
+      }
+
+      .send-cv-btn{ font-size:1.2rem; background-size:100% 100%; height:50px; width:240px; line-height:50px; }
+
+    }
+  }
+
+
+}
